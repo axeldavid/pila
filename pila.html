@@ -1,0 +1,56 @@
+<head>
+    <meta charset="utf-8" />
+    <title>Píla</title>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row game">
+            <div class="span6">
+                {{> competitors}}
+            </div>
+            <div class="span6">
+                {{> add_score}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12 add-player">
+                <hr />
+                {{> add_player}}
+            </div>
+        </div>
+    </div>
+</body>
+
+<template name="competitors">
+    <h1>Leikmenn</h1>
+    <ul id="competitors-list">
+            <li class="player-header">
+            <span class="player-name">Nafn</span>
+            <span class="player-score">Stig</span>
+            </li>
+        {{#each players}}
+            <li id="{{ _id }}">
+            <span class="player-name">{{ name }}</span>
+            <span class="player-score">{{ score }}</span>
+            <a href="#" class="player-remove"><i class="icon-remove"></i></a>
+            </li>
+        {{/each}}
+    </ul>
+</template>
+
+<template name="add_score">
+<h1>Skrá stig</h1>
+<ul id="add-score-inputs">
+    <li><input type="text" class="score" placeholder="stig" /></li>
+    <li><input type="text" class="score" placeholder="stig" /></li>
+    <li><input type="text" class="score" placeholder="stig" /></li>
+</ul>
+</template>
+
+<template name="add_player">
+    <input type="text" id="player-name" placeholder="Nýr leikmaður" />
+</template>

@@ -1,0 +1,53 @@
+.game {
+    margin-top: 70px;
+}
+
+ul#competitors-list,
+ul#add-score-inputs {
+    margin: 0;
+}
+
+ul#competitors-list > li {
+    display: block;
+    margin: 2px 0;
+    padding: 3px 0;
+    cursor: pointer;
+}
+
+ul#competitors-list > li span {
+    display: inline-block;
+}
+
+ul#competitors-list > li.player-header {
+    font-weight: bold;
+    font-size: 14pt;
+    cursor: default;
+}
+
+ul#competitors-list > li > span.player-name {
+    width: 250px;
+}
+
+ul#competitors-list > li > span.player-score {
+    width: 50px;
+}
+
+ul#add-score-inputs > li {
+    display: inline-block;
+}
+
+ul#add-score-inputs > li input.score {
+    font-size: 20pt;
+    height: 40px;
+    width: 75px;
+    line-height: 40px;
+    padding: 4px 12px;
+}
+
+input#player-name {
+    font-size: 20pt;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    padding: 4px 12px;
+}
