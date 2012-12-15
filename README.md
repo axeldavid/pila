@@ -1,3 +1,5 @@
+***Early development - Far from finished***
+
 #Pila
 
 1. Install Meteor:
