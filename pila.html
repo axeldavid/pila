@@ -28,16 +28,13 @@
 <template name="competitors">
     <h1>Leikmenn</h1>
     <ul id="competitors-list">
-            <li class="player-header">
+        <li class="player-header">
             <span class="player-name">Nafn</span>
             <span class="player-score">Stig</span>
-            </li>
+        </li>
+
         {{#each players}}
-            <li id="{{ _id }}">
-            <span class="player-name">{{ name }}</span>
-            <span class="player-score">{{ score }}</span>
-            <a href="#" class="player-remove"><i class="icon-remove"></i></a>
-            </li>
+            {{> player }}
         {{/each}}
     </ul>
 </template>
@@ -53,4 +50,12 @@
 
 <template name="add_player">
     <input type="text" id="player-name" placeholder="Nýr leikmaður" />
+</template>
+
+<template name="player">
+    <li class="player {{selected}}">
+        <span class="player-name">{{ name }}</span>
+        <span class="player-score">{{ score }}</span>
+        <i class="icon-remove player-remove"></i>
+    </li>
 </template>

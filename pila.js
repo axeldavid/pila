@@ -6,11 +6,19 @@ if (Meteor.is_client) {
       return Players.find({});
   };
 
-  Template.competitors.events = {
-    'click a.player-remove' : function (e) {
-        var player_id = $(e.currentTarget).closest('li').attr('id');
-        Players.remove({_id: player_id});
+  Template.player.events = {
+    'click' : function (e) {
+        if ($(e.target).hasClass('player-remove')) {
+            Players.remove({_id: this._id});
+        }
+        else {
+            Session.set('selected_player', this._id);
+        }
     }
+  };
+
+  Template.player.selected = function () {
+      return Session.equals('selected_player', this._id) ? 'selected' : '';
   };
 
   Template.add_player.events = {
