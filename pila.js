@@ -14,6 +14,12 @@ if (Meteor.is_client) {
         else {
             Session.set('selected_player', this._id);
         }
+    },
+    'mouseenter i.player-remove' : function(e) {
+        $(e.target).closest('li').addClass('removing');
+    },
+    'mouseleave i.player-remove' : function(e) {
+        $(e.target).closest('li').removeClass('removing');
     }
   };
 
@@ -29,6 +35,11 @@ if (Meteor.is_client) {
             $input.val('');
         }
     }
+  };
+
+  Template.add_score.selected_name = function () {
+      var player = Players.findOne(Session.get('selected_player'));
+      return player ? player.name : '';
   };
 }
 

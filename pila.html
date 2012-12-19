@@ -7,29 +7,29 @@
 </head>
 
 <body>
-    <div class="container">
+    <div id="page" class="container">
         <div class="row game">
-            <div class="span6">
+            <div class="span5">
                 {{> competitors}}
+                <div class="add-player">
+                    <hr />
+                    {{> add_player}}
+                </div>
             </div>
-            <div class="span6">
+            <div class="span5">
                 {{> add_score}}
             </div>
-        </div>
-        <div class="row">
-            <div class="span12 add-player">
-                <hr />
-                {{> add_player}}
+            <div class="span2">
+                {{> settings }}
             </div>
         </div>
     </div>
 </body>
 
 <template name="competitors">
-    <h1>Leikmenn</h1>
     <ul id="competitors-list">
         <li class="player-header">
-            <span class="player-name">Nafn</span>
+            <span class="player-name">Leikmenn</span>
             <span class="player-score">Stig</span>
         </li>
 
@@ -40,7 +40,7 @@
 </template>
 
 <template name="add_score">
-<h1>Skrá stig</h1>
+<h3>{{selected_name}}</h3>
 <ul id="add-score-inputs">
     <li><input type="text" class="score" placeholder="stig" /></li>
     <li><input type="text" class="score" placeholder="stig" /></li>
@@ -58,4 +58,13 @@
         <span class="player-score">{{ score }}</span>
         <i class="icon-remove player-remove"></i>
     </li>
+</template>
+
+<template name="settings">
+    <h3>Píla</h3>
+    <ul class="nav nav-list">
+        <li class="active"><a href="#">301</a></li>
+        <li><a href="#">401</a></li>
+        <li><a href="#">501</a></li>
+    </ul>
 </template>

@@ -1,3 +1,7 @@
+#page {
+    font-size: 16pt;
+}
+
 .game {
     margin-top: 70px;
 }
@@ -10,26 +14,42 @@ ul#add-score-inputs {
 ul#competitors-list > li {
     display: block;
     margin: 2px 0;
-    padding: 3px 0;
+    padding: 5px;
     cursor: pointer;
+    border: solid 3px #FFFFFF;
+    border-radius: 5px;
+}
+
+ul#competitors-list > li.selected {
+    border-color: #6060FF;
+}
+
+ul#competitors-list > li.removing,
+ul#competitors-list > li.selected.removing {
+    border-color: #9E0000;
+    color: #9E0000;
 }
 
 ul#competitors-list > li span {
     display: inline-block;
+    line-height: 16pt;
 }
 
 ul#competitors-list > li.player-header {
     font-weight: bold;
-    font-size: 14pt;
     cursor: default;
 }
 
 ul#competitors-list > li > span.player-name {
-    width: 250px;
+    width: 350px;
 }
 
 ul#competitors-list > li > span.player-score {
-    width: 50px;
+    width: 65px;
+}
+
+ul#competitors-list > li > i.player-remove {
+    margin: 5px;
 }
 
 ul#add-score-inputs > li {
@@ -48,6 +68,7 @@ input#player-name {
     font-size: 20pt;
     height: 40px;
     width: 100%;
+    max-width: 444px;
     line-height: 40px;
     padding: 4px 12px;
 }
